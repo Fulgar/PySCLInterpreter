@@ -25,7 +25,7 @@ class SCL_Parser(SCL_Scanner):
 	# Method will perform syntax analysis
 	def parse(self):
 		root = Node(None, None, NodeType.PROGRAM)
-		self.modPrint("Parsing " + str(root.getData().value))
+		self.modPrint("Parsing " + str(root.getNodeType().value))
 
 		lexeme = self.nextLexeme()
 
@@ -47,7 +47,7 @@ class SCL_Parser(SCL_Scanner):
 			else:
 				self.nextToken()
 
-		self.modPrint("Finished parsing " + str(root.getData().value))
+		self.modPrint("Finished parsing " + str(root.getNodeType().value))
 		return Tree(root)
 
 	# Method will both print statement and will append statement to self.printLines
@@ -89,21 +89,21 @@ class SCL_Parser(SCL_Scanner):
 	def parseImport(self, node):
 		importNode = Node(node, self.scanLines[self.currentLineNum], NodeType.IMPORT)
 		node.addChildNode(importNode)
-		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(importNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(importNode.getNodeType().value))
 
 		self.nextToken()
 
 		if self.currentToken is not Token.STRING_LITERAL:
 			self.errorMsg("Missing Import String value.")
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(importNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(importNode.getNodeType().value))
 
 	# Parses <symbol_stmnt>
 	def parseSymbol(self, node):
 		symbolNode = Node(node, self.scanLines[self.currentLineNum], NodeType.SYMBOL)
 		node.addChildNode(symbolNode)
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(symbolNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(symbolNode.getNodeType().value))
 
 		self.nextToken()
 
@@ -115,14 +115,14 @@ class SCL_Parser(SCL_Scanner):
 		if self.currentToken is not Token.INTEGER_LITERAL:
 			self.errorMsg("Missing Symbol value.")
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(symbolNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(symbolNode.getNodeType().value))
 
 	# Parses <globals>
 	def parseGlobal(self, node):
 		globalNode = Node(node, self.scanLines[self.currentLineNum], NodeType.GLOBALS)
 		node.addChildNode(globalNode)
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(globalNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(globalNode.getNodeType().value))
 
 		self.nextToken()
 
@@ -137,14 +137,14 @@ class SCL_Parser(SCL_Scanner):
 		if self.currentToken is Token.VARIABLES:
 			self.parseVarDec(globalNode)
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(globalNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(globalNode.getNodeType().value))
 
 	# Parses <const_dec>
 	def parseConstDec(self, node):
 		constDecNode = Node(node, self.scanLines[self.currentLineNum], NodeType.CONST_DEC)
 		node.addChildNode(constDecNode)
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(constDecNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(constDecNode.getNodeType().value))
 
 		self.nextToken()
 
@@ -154,14 +154,14 @@ class SCL_Parser(SCL_Scanner):
 		if self.currentToken is Token.DEFINE:
 			self.parseConstList(constDecNode)
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(constDecNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(constDecNode.getNodeType().value))
 
 	# Parses <const_list>
 	def parseConstList(self, node):
 		constListNode = Node(node, self.scanLines[self.currentLineNum], NodeType.CONST_LIST)
 		node.addChildNode(constListNode)
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(constListNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(constListNode.getNodeType().value))
 
 		# self.nextToken()
 
@@ -172,14 +172,14 @@ class SCL_Parser(SCL_Scanner):
 			self.parseCompDeclare(constListNode)
 			self.nextToken()
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(constListNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(constListNode.getNodeType().value))
 
 	# Parses <comp_declare>
 	def parseCompDeclare(self, node):
 		compDeclareNode = Node(node, self.scanLines[self.currentLineNum], NodeType.COMP_DECLARE)
 		node.addChildNode(compDeclareNode)
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(compDeclareNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(compDeclareNode.getNodeType().value))
 
 		constantDeclare = False
 		varDeclare = False
@@ -222,28 +222,28 @@ class SCL_Parser(SCL_Scanner):
 			else:
 				self.parseRetType(compDeclareNode)
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(compDeclareNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(compDeclareNode.getNodeType().value))
 
 	# Parses <ret_type>
 	def parseRetType(self, node):
 		retTypeNode = Node(node, self.scanLines[self.currentLineNum], NodeType.RET_TYPE)
 		node.addChildNode(retTypeNode)
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(retTypeNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(retTypeNode.getNodeType().value))
 
 		self.nextToken()
 
 		if self.currentToken.getNumCode() <= 2000:
 			self.errorMsg("Missing return type.")
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(retTypeNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(retTypeNode.getNodeType().value))
 
 	# Parses <var_dec>
 	def parseVarDec(self, node):
 		varDecNode = Node(node, self.scanLines[self.currentLineNum], NodeType.VAR_DEC)
 		node.addChildNode(varDecNode)
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(varDecNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(varDecNode.getNodeType().value))
 
 		self.nextToken()
 
@@ -253,14 +253,14 @@ class SCL_Parser(SCL_Scanner):
 		if self.currentToken is Token.DEFINE:
 			self.parseVarList(varDecNode)
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(varDecNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(varDecNode.getNodeType().value))
 
 	# Parses <var_list>
 	def parseVarList(self, node):
 		varListNode = Node(node, self.scanLines[self.currentLineNum], NodeType.VAR_LIST)
 		node.addChildNode(varListNode)
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(varListNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(varListNode.getNodeType().value))
 
 		# self.nextToken()
 
@@ -271,14 +271,14 @@ class SCL_Parser(SCL_Scanner):
 			self.parseCompDeclare(varListNode)
 			self.nextToken()
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(varListNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(varListNode.getNodeType().value))
 
 	# Parses <implement>
 	def parseImplementations(self, node):
 		implementationsNode = Node(node, self.scanLines[self.currentLineNum], NodeType.IMPLEMENT)
 		node.addChildNode(implementationsNode)
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(implementationsNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(implementationsNode.getNodeType().value))
 
 		self.nextToken()
 
@@ -288,14 +288,14 @@ class SCL_Parser(SCL_Scanner):
 		if self.currentToken is Token.FUNCTION:
 			self.parseFunctList(implementationsNode)
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(implementationsNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(implementationsNode.getNodeType().value))
 
 	# Parses <funct_list>
 	def parseFunctList(self, node):
 		functListNode = Node(node, self.scanLines[self.currentLineNum], NodeType.FUNCT_LIST)
 		node.addChildNode(functListNode)
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(functListNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(functListNode.getNodeType().value))
 
 		# self.nextToken()
 
@@ -306,14 +306,14 @@ class SCL_Parser(SCL_Scanner):
 			self.parseFunctBody(functListNode)
 			# self.nextToken() # TODO: Uncomment if stable
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(functListNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(functListNode.getNodeType().value))
 
 	# Parses <funct_body>
 	def parseFunctBody(self, node):
 		functBodyNode = Node(node, self.scanLines[self.currentLineNum], NodeType.FUNCT_BODY)
 		node.addChildNode(functBodyNode)
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(functBodyNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(functBodyNode.getNodeType().value))
 
 		self.nextToken()
 
@@ -340,14 +340,14 @@ class SCL_Parser(SCL_Scanner):
 		if self.currentToken is Token.BEGIN:
 			self.parsePActions(functBodyNode)
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(functBodyNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(functBodyNode.getNodeType().value))
 
 	# Parses <pactions>
 	def parsePActions(self, node):
 		pActionsNode = Node(node, self.scanLines[self.currentLineNum], NodeType.PACTIONS)
 		node.addChildNode(pActionsNode)
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(pActionsNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(pActionsNode.getNodeType().value))
 
 		# self.nextToken()
 
@@ -371,14 +371,14 @@ class SCL_Parser(SCL_Scanner):
 		if self.currentToken is not Token.MAIN and self.currentToken is not Token.FUNCTION_IDENTIFIER:
 			self.errorMsg("Missing Function Identifier.")
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(pActionsNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(pActionsNode.getNodeType().value))
 
 	# Parses <action_def>
 	def parseActionDef(self, node):
 		actionDefNode = Node(node, self.scanLines[self.currentLineNum], NodeType.ACTION_DEF)
 		node.addChildNode(actionDefNode)
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(actionDefNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(actionDefNode.getNodeType().value))
 
 		# self.nextToken()
 
@@ -413,14 +413,14 @@ class SCL_Parser(SCL_Scanner):
 			self.nextToken()
 			self.parsePvarValueList(actionDefNode)
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(actionDefNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(actionDefNode.getNodeType().value))
 
 	# Parses <exp>
 	def parseExp(self, node):
 		expNode = Node(node, self.scanLines[self.currentLineNum], NodeType.EXP)
 		node.addChildNode(expNode)
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(expNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(expNode.getNodeType().value))
 
 		# self.nextToken()
 
@@ -435,14 +435,14 @@ class SCL_Parser(SCL_Scanner):
 
 			self.nextToken()
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(expNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(expNode.getNodeType().value))
 
 	# Parses <pvar_value_list>
 	def parsePvarValueList(self, node):
 		pvarValueListNode = Node(node, self.scanLines[self.currentLineNum], NodeType.PVAR_VALUE_LIST)
 		node.addChildNode(pvarValueListNode)
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(pvarValueListNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Parsing " + str(pvarValueListNode.getNodeType().value))
 
 		# self.nextToken()
 
@@ -455,4 +455,4 @@ class SCL_Parser(SCL_Scanner):
 
 			self.nextToken()
 
-		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(pvarValueListNode.getData().value))
+		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(pvarValueListNode.getNodeType().value))

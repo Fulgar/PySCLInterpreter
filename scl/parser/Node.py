@@ -8,11 +8,11 @@
 class Node:
 
 	# Constructor
-	def __init__(self, parent, scanLine, data):
+	def __init__(self, parent, scanLine, nodeType):
 		self.parent = parent
 		self.children = None
 		self.scanLine = scanLine
-		self.data = data
+		self.nodeType = nodeType
 
 	# Getter Methods for all fields
 	def getParent(self):
@@ -24,8 +24,8 @@ class Node:
 	def getScanLine(self):
 		return self.scanLine
 
-	def getData(self):
-		return self.data
+	def getNodeType(self):
+		return self.nodeType
 
 	# Setter Methods for all fields
 	def setParent(self, parent):
@@ -37,8 +37,8 @@ class Node:
 	def setScanLine(self, scanLine):
 		self.scanLine = scanLine
 
-	def setData(self, data):
-		self.data = data
+	def setNodeType(self, nodeType):
+		self.nodeType = nodeType
 
 	# Adds node object to children list
 	def addChildNode(self, child):

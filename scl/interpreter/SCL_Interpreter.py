@@ -31,58 +31,58 @@ class SCL_Interpreter(SCL_Parser):
 		# Iterate through all of <program> node's direct children
 		for node in parseTree.getRoot().getChildren():
 
-			if node.getData() is NodeType.IMPORT:
+			if node.getNodeType() is NodeType.IMPORT:
 				# Nothing to interpret for imports in this subset of SCL
 				pass
 
-			elif node.getData() is NodeType.SYMBOL:
+			elif node.getNodeType() is NodeType.SYMBOL:
 				# Nothing to interpret for symbols in this subset of SCL
 				pass
 
-			elif node.getData() is NodeType.GLOBALS:
+			elif node.getNodeType() is NodeType.GLOBALS:
 				self.interpretGlobals(node)
 
-			elif node.getData() is NodeType.IMPLEMENT:
+			elif node.getNodeType() is NodeType.IMPLEMENT:
 				self.interpretImplement(node)
 
 	# Interprets globals
 	def interpretGlobals(self, node):
 		for child in node.getChildren():
-			if child.getData() is NodeType.CONST_DEC:
+			if child.getNodeType() is NodeType.CONST_DEC:
 				self.interpretConstDec(child)
-			elif child.getData() is NodeType.VAR_DEC:
+			elif child.getNodeType() is NodeType.VAR_DEC:
 				self.interpretVarDec(child)
 
 	# Interprets implement
 	def interpretImplement(self, node):
 		for child in node.getChildren():
-			if child.getData() is NodeType.FUNCT_LIST:
+			if child.getNodeType() is NodeType.FUNCT_LIST:
 				self.interpretFunctList(child)
 
 	# Interprets const_dec
 	def interpretConstDec(self, node):
 		# There should only be one child of <const_dec>
 		for child in node.getChildren():
-			if child.getData() is NodeType.CONST_LIST:
+			if child.getNodeType() is NodeType.CONST_LIST:
 				self.interpretConstList(child)
 
 	# Interprets const_list
 	def interpretConstList(self, node):
 		for child in node.getChildren():
-			if child.getData() is NodeType.COMP_DECLARE:
+			if child.getNodeType() is NodeType.COMP_DECLARE:
 				self.interpretCompDeclare(child)
 
 	# Interprets var_dec
 	def interpretVarDec(self, node):
 		# There should only be one child of <var_dec>
 		for child in node.getChildren():
-			if child.getData() is NodeType.VAR_LIST:
+			if child.getNodeType() is NodeType.VAR_LIST:
 				self.interpretVarList(child)
 
 	# Interprets var_list
 	def interpretVarList(self, node):
 		for child in node.getChildren():
-			if child.getData() is NodeType.COMP_DECLARE:
+			if child.getNodeType() is NodeType.COMP_DECLARE:
 				self.interpretCompDeclare(child)
 
 	# Interprets comp_declare
@@ -90,14 +90,14 @@ class SCL_Interpreter(SCL_Parser):
 		parent = node.getParent()
 		greatGrandparent = parent.getParent().getParent()
 
-		isConstant = True if parent.getData() is NodeType.CONST_LIST else False
-		isGlobal = True if greatGrandparent.getData() is NodeType.GLOBALS else False
+		isConstant = True if parent.getNodeType() is NodeType.CONST_LIST else False
+		isGlobal = True if greatGrandparent.getNodeType() is NodeType.GLOBALS else False
 
 		lexemes = node.getScanLine().getLexemes()
 		returnTypeToken = None
 
 		for child in node.getChildren():
-			if child.getData() is NodeType.RET_TYPE:
+			if child.getNodeType() is NodeType.RET_TYPE:
 				returnTypeToken = self.interpretRetType(child)
 
 		if isGlobal is True:
@@ -123,23 +123,23 @@ class SCL_Interpreter(SCL_Parser):
 	# Interprets funct_list
 	def interpretFunctList(self, node):
 		for child in node.getChildren():
-			if child.getData() is NodeType.FUNCT_BODY:
+			if child.getNodeType() is NodeType.FUNCT_BODY:
 				self.interpretFunctBody(child)
 
 	# Interprets funct_body
 	def interpretFunctBody(self, node):
 		for child in node.getChildren():
-			if child.getData() is NodeType.CONST_DEC:
+			if child.getNodeType() is NodeType.CONST_DEC:
 				self.interpretConstDec(child)
-			elif child.getData() is NodeType.VAR_DEC:
+			elif child.getNodeType() is NodeType.VAR_DEC:
 				self.interpretVarDec(child)
-			elif child.getData() is NodeType.PACTIONS:
+			elif child.getNodeType() is NodeType.PACTIONS:
 				self.interpretPActions(child)
 
 	# Interprets pactions
 	def interpretPActions(self, node):
 		for child in node.getChildren():
-			if child.getData() is NodeType.ACTION_DEF:
+			if child.getNodeType() is NodeType.ACTION_DEF:
 				self.interpretActionDef(child)
 
 	# Interprets action_def
@@ -151,13 +151,13 @@ class SCL_Interpreter(SCL_Parser):
 			if lexemes[1].getLexemeString() in self.globalVariables:
 				expResult = None
 				for child in node.getChildren():
-					if child.getData() is NodeType.EXP:
+					if child.getNodeType() is NodeType.EXP:
 						expResult = self.interpretExp(child)
 						self.globalVariables[lexemes[1].getLexemeString()][0] = expResult
 			elif lexemes[1].getLexemeString() in self.implementVariables:
 				expResult = None
 				for child in node.getChildren():
-					if child.getData() is NodeType.EXP:
+					if child.getNodeType() is NodeType.EXP:
 						expResult = self.interpretExp(child)
 						self.implementVariables[lexemes[1].getLexemeString()][0] = expResult
 			elif lexemes[1].getLexemeString() in (self.globalConstants, self.implementConstants):
