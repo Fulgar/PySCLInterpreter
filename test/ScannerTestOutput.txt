@@ -1,0 +1,276 @@
+Log Time: 2019-07-11 04:56:07.976159
+==================================================
+----------------------------------------
+Line 1: import "test.package"
+
+Lexeme: import          	 Token: IMPORT
+Lexeme: "test.package"  	 Token: STRING_LITERAL
+----------------------------------------
+
+
+----------------------------------------
+Line 2: 
+
+----------------------------------------
+
+
+----------------------------------------
+Line 3: symbol MM 45
+
+Lexeme: symbol          	 Token: SYMBOL
+Lexeme: MM              	 Token: SYMBOL_IDENTIFIER
+Lexeme: 45              	 Token: INTEGER_LITERAL
+----------------------------------------
+
+
+----------------------------------------
+Line 4: 
+
+----------------------------------------
+
+
+----------------------------------------
+Line 5: global declarations
+
+Lexeme: global          	 Token: GLOBAL
+Lexeme: declarations    	 Token: DECLARATIONS
+----------------------------------------
+
+
+----------------------------------------
+Line 6: constants
+
+Lexeme: constants       	 Token: CONSTANTS
+----------------------------------------
+
+
+----------------------------------------
+Line 7: define PI = 3.14159265 type float
+
+Lexeme: define          	 Token: DEFINE
+Lexeme: PI              	 Token: CONSTANT_FLOAT_IDENTIFIER
+Lexeme: =               	 Token: ASSIGNMENT_OPERATOR
+Lexeme: 3.14159265      	 Token: FLOAT_LITERAL
+Lexeme: type            	 Token: TYPE
+Lexeme: float           	 Token: FLOAT
+----------------------------------------
+
+
+----------------------------------------
+Line 8: define testBool = mfalse type tbool
+
+Lexeme: define          	 Token: DEFINE
+Lexeme: testBool        	 Token: CONSTANT_BOOLEAN_IDENTIFIER
+Lexeme: =               	 Token: ASSIGNMENT_OPERATOR
+Lexeme: mfalse          	 Token: BOOLEAN_LITERAL
+Lexeme: type            	 Token: TYPE
+Lexeme: tbool           	 Token: BOOLEAN
+----------------------------------------
+
+
+----------------------------------------
+Line 9: variables
+
+Lexeme: variables       	 Token: VARIABLES
+----------------------------------------
+
+
+----------------------------------------
+Line 10: define radius of type integer
+
+Lexeme: define          	 Token: DEFINE
+Lexeme: radius          	 Token: INTEGER_IDENTIFIER
+Lexeme: of              	 Token: OF
+Lexeme: type            	 Token: TYPE
+Lexeme: integer         	 Token: INTEGER
+----------------------------------------
+
+
+----------------------------------------
+Line 11: 
+
+----------------------------------------
+
+
+----------------------------------------
+Line 12: 
+
+----------------------------------------
+
+
+----------------------------------------
+Line 13: implementations
+
+Lexeme: implementations 	 Token: IMPLEMENTATIONS
+----------------------------------------
+
+
+----------------------------------------
+Line 14: 
+
+----------------------------------------
+
+
+----------------------------------------
+Line 15: function main is
+
+Lexeme: function        	 Token: FUNCTION
+Lexeme: main            	 Token: MAIN
+Lexeme: is              	 Token: IS
+----------------------------------------
+
+
+----------------------------------------
+Line 16: variables
+
+Lexeme: variables       	 Token: VARIABLES
+----------------------------------------
+
+
+----------------------------------------
+Line 17: define diameter of type integer
+
+Lexeme: define          	 Token: DEFINE
+Lexeme: diameter        	 Token: INTEGER_IDENTIFIER
+Lexeme: of              	 Token: OF
+Lexeme: type            	 Token: TYPE
+Lexeme: integer         	 Token: INTEGER
+----------------------------------------
+
+
+----------------------------------------
+Line 18: define area of type float
+
+Lexeme: define          	 Token: DEFINE
+Lexeme: area            	 Token: FLOAT_IDENTIFIER
+Lexeme: of              	 Token: OF
+Lexeme: type            	 Token: TYPE
+Lexeme: float           	 Token: FLOAT
+----------------------------------------
+
+
+----------------------------------------
+Line 19: define circumference of type float
+
+Lexeme: define          	 Token: DEFINE
+Lexeme: circumference   	 Token: FLOAT_IDENTIFIER
+Lexeme: of              	 Token: OF
+Lexeme: type            	 Token: TYPE
+Lexeme: float           	 Token: FLOAT
+----------------------------------------
+
+
+----------------------------------------
+Line 20: 
+
+----------------------------------------
+
+
+----------------------------------------
+Line 21: begin
+
+Lexeme: begin           	 Token: BEGIN
+----------------------------------------
+
+
+----------------------------------------
+Line 22: input "Enter the diameter of the circle: ", diameter
+
+Lexeme: input           	 Token: INPUT
+Lexeme: "Enter the diameter of the circle: ", 	 Token: STRING_LITERAL
+Lexeme: diameter        	 Token: INTEGER_IDENTIFIER
+----------------------------------------
+
+
+----------------------------------------
+Line 23: 
+
+----------------------------------------
+
+
+----------------------------------------
+Line 24: set radius = diameter / 2
+
+Lexeme: set             	 Token: SET
+Lexeme: radius          	 Token: INTEGER_IDENTIFIER
+Lexeme: =               	 Token: ASSIGNMENT_OPERATOR
+Lexeme: diameter        	 Token: INTEGER_IDENTIFIER
+Lexeme: /               	 Token: DIV_OPERATOR
+Lexeme: 2               	 Token: INTEGER_LITERAL
+----------------------------------------
+
+
+----------------------------------------
+Line 25: set area = PI * radius * radius
+
+Lexeme: set             	 Token: SET
+Lexeme: area            	 Token: FLOAT_IDENTIFIER
+Lexeme: =               	 Token: ASSIGNMENT_OPERATOR
+Lexeme: PI              	 Token: CONSTANT_FLOAT_IDENTIFIER
+Lexeme: *               	 Token: MUL_OPERATOR
+Lexeme: radius          	 Token: INTEGER_IDENTIFIER
+Lexeme: *               	 Token: MUL_OPERATOR
+Lexeme: radius          	 Token: INTEGER_IDENTIFIER
+----------------------------------------
+
+
+----------------------------------------
+Line 26: set circumference = 2 * PI * radius
+
+Lexeme: set             	 Token: SET
+Lexeme: circumference   	 Token: FLOAT_IDENTIFIER
+Lexeme: =               	 Token: ASSIGNMENT_OPERATOR
+Lexeme: 2               	 Token: INTEGER_LITERAL
+Lexeme: *               	 Token: MUL_OPERATOR
+Lexeme: PI              	 Token: CONSTANT_FLOAT_IDENTIFIER
+Lexeme: *               	 Token: MUL_OPERATOR
+Lexeme: radius          	 Token: INTEGER_IDENTIFIER
+----------------------------------------
+
+
+----------------------------------------
+Line 27: 
+
+----------------------------------------
+
+
+----------------------------------------
+Line 28: display "Area: ", area
+
+Lexeme: display         	 Token: DISPLAY
+Lexeme: "Area: ",       	 Token: STRING_LITERAL
+Lexeme: area            	 Token: FLOAT_IDENTIFIER
+----------------------------------------
+
+
+----------------------------------------
+Line 29: display "Circumference: ", circumference
+
+Lexeme: display         	 Token: DISPLAY
+Lexeme: "Circumference: ", 	 Token: STRING_LITERAL
+Lexeme: circumference   	 Token: FLOAT_IDENTIFIER
+----------------------------------------
+
+
+----------------------------------------
+Line 30: display "Bool: ", testBool
+
+Lexeme: display         	 Token: DISPLAY
+Lexeme: "Bool: ",       	 Token: STRING_LITERAL
+Lexeme: testBool        	 Token: CONSTANT_BOOLEAN_IDENTIFIER
+----------------------------------------
+
+
+----------------------------------------
+Line 31: endfun main
+
+Lexeme: endfun          	 Token: END_FUN
+Lexeme: main            	 Token: MAIN
+----------------------------------------
+
+
+----------------------------------------
+Line 32: 
+
+----------------------------------------
+
