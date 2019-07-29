@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3039d02c-8861-4498-8def-7fe10d4307a1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scl/interpreter/SCL_Interpreter.py" beforeDir="false" afterPath="$PROJECT_DIR$/scl/interpreter/SCL_Interpreter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scl/parser/Node.py" beforeDir="false" afterPath="$PROJECT_DIR$/scl/parser/Node.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scl/parser/SCL_Parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/scl/parser/SCL_Parser.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,7 +13,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/CS4308_W01_JasonJames_Project$Lexeme.coverage" NAME="Lexeme Coverage Results" MODIFIED="1561333773987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scl" />
-    <SUITE FILE_PATH="coverage/CS4308_W01_JasonJames_Project$InterpreterTest.coverage" NAME="InterpreterTest Coverage Results" MODIFIED="1563740607106" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CS4308_W01_JasonJames_Project$InterpreterTest.coverage" NAME="InterpreterTest Coverage Results" MODIFIED="1564355227189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/CS4308_W01_JasonJames_Project$ParserTest.coverage" NAME="ParserTest Coverage Results" MODIFIED="1563440710602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/CS4308_W01_JasonJames_Project$testset.coverage" NAME="testset Coverage Results" MODIFIED="1563572417462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/CS4308_W01_JasonJames_Project$ScannerTest.coverage" NAME="ScannerTest Coverage Results" MODIFIED="1562835367867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
@@ -24,11 +21,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scl/parser/Node.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
+            <state relative-caret-position="-5">
+              <caret line="27" column="28" lean-forward="true" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scl/parser/SCL_Parser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5406">
+              <caret line="333" selection-start-line="333" selection-end-line="333" />
+              <folding>
+                <element signature="e#106#153#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,6 +66,15 @@
       <find>arsing ^$</find>
       <find>arsing .*&gt;\&quot;</find>
       <find>\t</find>
+      <find>errorMsg</find>
+      <find>self.errorMsg\(\&quot;.*\&quot;\)</find>
+      <find>[*[A-z]&amp;&amp;^[addChildNode]]Node</find>
+      <find>[[A-z].*&amp;&amp;^[addChildNode]]Node</find>
+      <find>[[A-z]*Node]</find>
+      <find>([A-z&amp;&amp;^]*Node)</find>
+      <find>(?!^addChildNode$)</find>
+      <find>(?!^(addChildNode)&amp;&amp;[A-z]*$)</find>
+      <find>(^[A-z]*$)(?!^(addChildNode)$)</find>
     </findStrings>
     <replaceStrings>
       <replace>errorMsg(&quot;PLACEHOLDER&quot;)</replace>
@@ -66,6 +84,8 @@
       <replace>&quot; &quot; + &quot;\t&quot; *</replace>
       <replace />
       <replace>arsing&quot; + str(node)</replace>
+      <replace>self.errorMsg\(\&quot;.*\&quot;\)</replace>
+      <replace>self.errorMsg\(\&quot;.*\&quot;\)\nreturn None</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -87,7 +107,6 @@
         <option value="$PROJECT_DIR$/scl/scanner/ScanLine.py" />
         <option value="$PROJECT_DIR$/scl/parser/Tree.py" />
         <option value="$PROJECT_DIR$/test/ParserTest.py" />
-        <option value="$PROJECT_DIR$/scl/parser/SCL_Parser.py" />
         <option value="$PROJECT_DIR$/scl/scanner/Lexeme.py" />
         <option value="$PROJECT_DIR$/test/testset.py" />
         <option value="$PROJECT_DIR$/test/sample.scl" />
@@ -97,13 +116,15 @@
         <option value="$PROJECT_DIR$/test/InterpreterTest.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/scl/parser/Node.py" />
+        <option value="$PROJECT_DIR$/scl/parser/SCL_Parser.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="20" />
-    <option name="width" value="960" />
-    <option name="height" value="1100" />
+    <option name="x" value="85" />
+    <option name="y" value="25" />
+    <option name="width" value="1750" />
+    <option name="height" value="980" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -315,28 +336,38 @@
       <workItem from="1562885009920" duration="6348000" />
       <workItem from="1563143994650" duration="53048000" />
       <workItem from="1563645353706" duration="480000" />
-      <workItem from="1563739805474" duration="859000" />
+      <workItem from="1563739805474" duration="1611000" />
+      <workItem from="1564354153167" duration="4364000" />
     </task>
+    <task id="LOCAL-00001" summary="Refactored Node.data field to Node.nodeType">
+      <created>1563740774843</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1563740774843</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212987000" />
+    <option name="totallyTimeSpent" value="218103000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2785235" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28255033" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26487252" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26487252" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" />
@@ -373,6 +404,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Refactored Node.data field to Node.nodeType" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored Node.data field to Node.nodeType" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -460,16 +495,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/testset.py" />
-    <entry file="file://$PROJECT_DIR$/scl/parser/SCL_Parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="835">
-          <caret line="434" lean-forward="true" selection-start-line="434" selection-end-line="434" />
-          <folding>
-            <element signature="e#106#153#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scl/scanner/SCL_Scanner.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-644">
@@ -571,8 +596,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scl/parser/Node.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
+        <state relative-caret-position="-5">
+          <caret line="27" column="28" lean-forward="true" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scl/parser/SCL_Parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5406">
+          <caret line="333" selection-start-line="333" selection-end-line="333" />
+          <folding>
+            <element signature="e#106#153#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
