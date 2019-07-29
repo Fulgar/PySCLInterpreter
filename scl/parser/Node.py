@@ -47,6 +47,11 @@ class Node:
 
 		self.children.append(child)
 
+	# Removes node object from children list
+	def removeChildNode(self, child):
+		if self.children is not None:
+			self.children.remove(child)
+
 	# Returns the distance from the root node
 	def getDepth(self):
 		if self.getParent() is None:
