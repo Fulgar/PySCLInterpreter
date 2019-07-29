@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3039d02c-8861-4498-8def-7fe10d4307a1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scl/parser/Node.py" beforeDir="false" afterPath="$PROJECT_DIR$/scl/parser/Node.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scl/parser/SCL_Parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/scl/parser/SCL_Parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ParserTestOutput.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/ParserTestOutput.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,9 +15,9 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/CS4308_W01_JasonJames_Project$Lexeme.coverage" NAME="Lexeme Coverage Results" MODIFIED="1561333773987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scl" />
-    <SUITE FILE_PATH="coverage/CS4308_W01_JasonJames_Project$InterpreterTest.coverage" NAME="InterpreterTest Coverage Results" MODIFIED="1564359729683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/CS4308_W01_JasonJames_Project$ParserTest.coverage" NAME="ParserTest Coverage Results" MODIFIED="1563440710602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CS4308_W01_JasonJames_Project$InterpreterTest.coverage" NAME="InterpreterTest Coverage Results" MODIFIED="1564362508813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/CS4308_W01_JasonJames_Project$testset.coverage" NAME="testset Coverage Results" MODIFIED="1563572417462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CS4308_W01_JasonJames_Project$ParserTest.coverage" NAME="ParserTest Coverage Results" MODIFIED="1564362296409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/CS4308_W01_JasonJames_Project$ScannerTest.coverage" NAME="ScannerTest Coverage Results" MODIFIED="1562835367867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/CS4308_W01_JasonJames_Project$MethodTester.coverage" NAME="MethodTester Coverage Results" MODIFIED="1561682738810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scl" />
   </component>
@@ -24,8 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scl/parser/Node.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="49" column="44" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
+            <state relative-caret-position="136">
+              <caret line="50" column="37" lean-forward="true" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -33,8 +35,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scl/parser/SCL_Parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="416" column="16" lean-forward="true" selection-start-line="416" selection-start-column="16" selection-end-line="416" selection-end-column="35" />
+            <state relative-caret-position="236">
+              <caret line="512" column="85" selection-start-line="512" selection-start-column="85" selection-end-line="512" selection-end-column="85" />
               <folding>
                 <element signature="e#106#153#0" expanded="true" />
               </folding>
@@ -75,6 +77,7 @@
       <find>(?!^addChildNode$)</find>
       <find>(?!^(addChildNode)&amp;&amp;[A-z]*$)</find>
       <find>(^[A-z]*$)(?!^(addChildNode)$)</find>
+      <find>self.errorMsg\(&quot;.*&quot;\)\n\t*return None</find>
     </findStrings>
     <replaceStrings>
       <replace>errorMsg(&quot;PLACEHOLDER&quot;)</replace>
@@ -109,13 +112,13 @@
         <option value="$PROJECT_DIR$/test/ParserTest.py" />
         <option value="$PROJECT_DIR$/scl/scanner/Lexeme.py" />
         <option value="$PROJECT_DIR$/test/testset.py" />
-        <option value="$PROJECT_DIR$/test/sample.scl" />
         <option value="$PROJECT_DIR$/test/InterpreterTestOutput.txt" />
         <option value="$PROJECT_DIR$/scl/interpreter/SCL_Interpreter.py" />
         <option value="$PROJECT_DIR$/scl/parser/NodeType.py" />
         <option value="$PROJECT_DIR$/test/InterpreterTest.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/scl/parser/Node.py" />
+        <option value="$PROJECT_DIR$/test/sample.scl" />
         <option value="$PROJECT_DIR$/scl/parser/SCL_Parser.py" />
       </list>
     </option>
@@ -311,8 +314,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.InterpreterTest" />
-        <item itemvalue="Python.testset" />
         <item itemvalue="Python.ParserTest" />
+        <item itemvalue="Python.testset" />
         <item itemvalue="Python.ScannerTest" />
         <item itemvalue="Python.MethodTester" />
       </list>
@@ -337,7 +340,7 @@
       <workItem from="1563143994650" duration="53048000" />
       <workItem from="1563645353706" duration="480000" />
       <workItem from="1563739805474" duration="1611000" />
-      <workItem from="1564354153167" duration="6168000" />
+      <workItem from="1564354153167" duration="7379000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored Node.data field to Node.nodeType">
       <created>1563740774843</created>
@@ -360,11 +363,18 @@
       <option name="project" value="LOCAL" />
       <updated>1564360227034</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixed error message strings">
+      <created>1564361515769</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1564361515769</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219907000" />
+    <option name="totallyTimeSpent" value="221118000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -449,7 +459,8 @@
     <MESSAGE value="Refactored Node.data field to Node.nodeType" />
     <MESSAGE value="Parser now returns None from parse methods that have errors" />
     <MESSAGE value="Added removeChildNode method to Node class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added removeChildNode method to Node class" />
+    <MESSAGE value="Fixed error message strings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed error message strings" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -565,16 +576,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/ParserTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#106#150#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scl/scanner/Token.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -582,13 +583,6 @@
           <folding>
             <element signature="e#106#127#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/sample.scl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-84">
-          <caret line="1" lean-forward="true" selection-end-line="29" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -638,15 +632,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scl/parser/Node.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="49" column="44" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
+        <state relative-caret-position="136">
+          <caret line="50" column="37" lean-forward="true" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ParserTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#106#150#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/sample.scl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scl/parser/SCL_Parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="416" column="16" lean-forward="true" selection-start-line="416" selection-start-column="16" selection-end-line="416" selection-end-column="35" />
+        <state relative-caret-position="236">
+          <caret line="512" column="85" selection-start-line="512" selection-start-column="85" selection-end-line="512" selection-end-column="85" />
           <folding>
             <element signature="e#106#153#0" expanded="true" />
           </folding>

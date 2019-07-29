@@ -95,6 +95,7 @@ class SCL_Parser(SCL_Scanner):
 
 		if self.currentToken is not Token.STRING_LITERAL:
 			self.errorMsg("Missing Import String value.")
+			node.removeChildNode(node.getChildren()[len(node.getChildren())-1])
 			return None
 
 		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(importNode.getNodeType().value))
@@ -110,12 +111,14 @@ class SCL_Parser(SCL_Scanner):
 
 		if self.currentToken is not Token.SYMBOL_IDENTIFIER:
 			self.errorMsg("Missing Symbol Identifier.")
+			node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 			return None
 
 		self.nextToken()
 
 		if self.currentToken is not Token.INTEGER_LITERAL:
 			self.errorMsg("Missing Symbol value.")
+			node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 			return None
 
 		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(symbolNode.getNodeType().value))
@@ -131,6 +134,7 @@ class SCL_Parser(SCL_Scanner):
 
 		if self.currentToken is not Token.DECLARATIONS:
 			self.errorMsg("Missing Declarations Keyword after Global.")
+			node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 			return None
 
 
@@ -154,6 +158,7 @@ class SCL_Parser(SCL_Scanner):
 
 		if self.currentToken is not Token.DEFINE:
 			self.errorMsg("Missing Define keyword after constants.")
+			node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 			return None
 
 		if self.currentToken is Token.DEFINE:
@@ -172,6 +177,7 @@ class SCL_Parser(SCL_Scanner):
 
 		if self.currentToken is not Token.DEFINE:
 			self.errorMsg("Missing Define keyword.")
+			node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 			return None
 
 		while self.currentToken is Token.DEFINE:
@@ -196,6 +202,7 @@ class SCL_Parser(SCL_Scanner):
 		# If currentToken's numerical code doesn't match any of the identifier tokens (Between 2 and 9)
 		if (2 <= self.currentToken.getNumCode() <= 9) is False:
 			self.errorMsg("Missing variable name.")
+			node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 			return None
 
 		if (2 <= self.currentToken.getNumCode() <= 5) is True:
@@ -209,6 +216,7 @@ class SCL_Parser(SCL_Scanner):
 		# If third token is not "=" and is not "of"
 		if self.currentToken is not Token.ASSIGNMENT_OPERATOR and self.currentToken is not Token.OF:
 			self.errorMsg("Invalid third entry.")
+			node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 			return None
 
 		self.nextToken()
@@ -216,6 +224,7 @@ class SCL_Parser(SCL_Scanner):
 		# If fourth token is not a literal and is not "type"
 		if (10 <= self.currentToken.getNumCode() <= 13) is False and self.currentToken is not Token.TYPE:
 			self.errorMsg("Invalid fourth entry.")
+			node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 			return None
 
 		if varDeclare is True:
@@ -227,6 +236,7 @@ class SCL_Parser(SCL_Scanner):
 
 			if self.currentToken is not Token.TYPE:
 				self.errorMsg("Missing return type.")
+				node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 				return None
 
 			else:
@@ -245,6 +255,7 @@ class SCL_Parser(SCL_Scanner):
 
 		if self.currentToken.getNumCode() <= 2000:
 			self.errorMsg("Missing return type.")
+			node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 			return None
 
 		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(retTypeNode.getNodeType().value))
@@ -260,6 +271,7 @@ class SCL_Parser(SCL_Scanner):
 
 		if self.currentToken is not Token.DEFINE:
 			self.errorMsg("Missing Define keyword.")
+			node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 			return None
 
 		if self.currentToken is Token.DEFINE:
@@ -278,6 +290,7 @@ class SCL_Parser(SCL_Scanner):
 
 		if self.currentToken is not Token.DEFINE:
 			self.errorMsg("Missing Define keyword.")
+			node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 			return None
 
 		while self.currentToken is Token.DEFINE:
@@ -297,6 +310,7 @@ class SCL_Parser(SCL_Scanner):
 
 		if self.currentToken is not Token.FUNCTION:
 			self.errorMsg("Missing Function keyword.")
+			node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 			return None
 
 		if self.currentToken is Token.FUNCTION:
@@ -315,6 +329,7 @@ class SCL_Parser(SCL_Scanner):
 
 		if self.currentToken is not Token.FUNCTION:
 			self.errorMsg("Missing Function keyword.")
+			node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 			return None
 
 		while self.currentToken is Token.FUNCTION:
@@ -334,12 +349,14 @@ class SCL_Parser(SCL_Scanner):
 
 		if self.currentToken is not Token.FUNCTION_IDENTIFIER and self.currentToken is not Token.MAIN:
 			self.errorMsg("Missing Function Identifier.")
+			node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 			return None
 
 		self.nextToken()
 
 		if self.currentToken is not Token.IS:
 			self.errorMsg("Missing is keyword at end of line")
+			node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 			return None
 
 		self.nextToken()
@@ -353,6 +370,7 @@ class SCL_Parser(SCL_Scanner):
 
 		if self.currentToken is not Token.BEGIN:
 			self.errorMsg("Missing Begin keyword.")
+			node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 			return None
 
 		if self.currentToken is Token.BEGIN:
@@ -371,12 +389,14 @@ class SCL_Parser(SCL_Scanner):
 
 		if self.currentToken is not Token.BEGIN:
 			self.errorMsg("Missing Begin keyword.")
+			node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 			return None
 
 		self.nextToken()
 
 		if self.currentToken is not Token.SET and self.currentToken is not Token.INPUT and self.currentToken is not Token.DISPLAY:
 			self.errorMsg("Invalid statement. Check first word.")
+			node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 			return None
 
 		while self.currentToken is Token.SET or self.currentToken is Token.INPUT or self.currentToken is Token.DISPLAY:
@@ -385,12 +405,14 @@ class SCL_Parser(SCL_Scanner):
 
 		if self.currentToken is not Token.END_FUN:
 			self.errorMsg("Missing endfun keyword.")
+			node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 			return None
 
 		self.nextToken()
 
 		if self.currentToken is not Token.MAIN and self.currentToken is not Token.FUNCTION_IDENTIFIER:
 			self.errorMsg("Missing Function Identifier.")
+			node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 			return None
 
 		self.modPrint(" " + "\t" * node.getDepth() + "Finished parsing " + str(pActionsNode.getNodeType().value))
@@ -409,12 +431,14 @@ class SCL_Parser(SCL_Scanner):
 
 			if (2 <= self.currentToken.getNumCode() <= 9) is False:
 				self.errorMsg("Missing variable name.")
+				node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 				return None
 
 			self.nextToken()
 
 			if self.currentToken is not Token.ASSIGNMENT_OPERATOR:
 				self.errorMsg("Missing = operator.")
+				node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 				return None
 
 			self.nextToken()
@@ -425,12 +449,14 @@ class SCL_Parser(SCL_Scanner):
 
 			if self.currentToken is not Token.STRING_LITERAL:
 				self.errorMsg("Missing string.")
+				node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 				return None
 
 			self.nextToken()
 
 			if (2 <= self.currentToken.getNumCode() <= 9) is False:
 				self.errorMsg("Missing variable name.")
+				node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 				return None
 
 			self.nextToken()
@@ -452,6 +478,7 @@ class SCL_Parser(SCL_Scanner):
 
 		if (2 <= self.currentToken.getNumCode() <= 18) is False and (25 <= self.currentToken.getNumCode() <= 29) is False:
 			self.errorMsg("Invalid token. Expected variable name or operator.")
+			node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 			return None
 
 		while (2 <= self.currentToken.getNumCode() <= 18) is True or (25 <= self.currentToken.getNumCode() <= 29) is True:
@@ -459,6 +486,7 @@ class SCL_Parser(SCL_Scanner):
 			if (2 <= self.currentToken.getNumCode() <= 18) is False and (
 					25 <= self.currentToken.getNumCode() <= 29) is False:
 				self.errorMsg("Invalid token. Expected variable name or operator.")
+				node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 				return None
 
 			self.nextToken()
@@ -476,11 +504,13 @@ class SCL_Parser(SCL_Scanner):
 
 		if (2 <= self.currentToken.getNumCode() <= 13) is False:
 			self.errorMsg("Invalid token. Expected variable name or value.")
+			node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 			return None
 
 		while (2 <= self.currentToken.getNumCode() <= 13) is True:
 			if (2 <= self.currentToken.getNumCode() <= 13) is False:
 				self.errorMsg("Invalid token. Expected variable name or value.")
+				node.removeChildNode(node.getChildren()[len(node.getChildren()) - 1])
 				return None
 
 			self.nextToken()
